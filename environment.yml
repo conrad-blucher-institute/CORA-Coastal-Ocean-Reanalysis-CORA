@@ -1,0 +1,26 @@
+name: cora
+channels:
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - scipy
+  - pandas
+  - dask
+  - intake
+  - xarray
+  - intake-xarray
+  - holoviews
+  - geoviews
+  - hvplot
+  - bokeh
+  - datashader
+  - cartopy
+  - jupyter
+  - jupyter_bokeh
+  - s3fs
+  - folium
+  - branca
+  - pip:
+      - cmocean
+      - geopy
