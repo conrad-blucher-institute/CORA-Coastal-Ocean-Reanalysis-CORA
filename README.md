@@ -36,8 +36,7 @@ This notebook retrieves observed hourly water levels from NWLON stations using C
   - Landing Page: https://tidesandcurrents.noaa.gov/cora.html
   - NOAA's [Center for Operational Oceanographic Products and Services](https://tidesandcurrents.noaa.gov/)
     User Services: tide.predictions@noaa.gov
-  - [Coastal Hazards Branch](https://tidesandcurrents.noaa.gov/coastal_hazards.html)
-    nos.co-ops.chb@noaa.gov
+
 
 #  Partners
   - NOAA’s [Office for Coast Management](https://coast.noaa.gov/) - Website: [Contact Form](https://coast.noaa.gov/contactform/)
