@@ -21,6 +21,7 @@ dependencies:
   - s3fs
   - folium
   - branca
+  - zarr=2.18
   - pip:
       - cmocean
       - geopy
