@@ -10,8 +10,6 @@ dependencies:
   - intake
   - xarray
   - intake-xarray
-  - holoviews
-  - geoviews
   - hvplot
   - bokeh
   - datashader
@@ -25,4 +23,6 @@ dependencies:
   - pip:
       - cmocean 
       - geopy
+      - holoviews
+      - geoviews
       - zarr==2.18
