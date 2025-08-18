@@ -1,7 +1,7 @@
 # Coastal Ocean Reanalysis (CORA)
 
 # Overview
-NOAA’s Coastal Ocean Reanalysis (CORA) provides modeled historical water levels and waves for the Atlantic, Gulf, and Caribbean from 1979-2022. The reanalysis was performed through the partnership of NOAA National Ocean Service (NOS) and University of North Carolina’s (UNC) Institute of Marine Sciences and Renaissance Computing Institute ([RENCI](https://renci.org/)). Modeling was performed by ’s  RENCI, and couples ADvanced CIRCulation Model ([ADCIRC](https://www.erdc.usace.army.mil/Media/Fact-Sheets/Fact-Sheet-Article-View/Article/476698/advanced-circulation-model/)) and Simulating WAves Nearshore ([SWAN](https://swanmodel.sourceforge.io/)) to produce data points every 300 to 500 meters. Hourly water level observations from NOAA’s Center for Operational Oceanographic Products and Services (CO-OPS) [National Water Level Observation Network](https://tidesandcurrents.noaa.gov/) (NWLON) were both assimilated into modeling, and used for [validation](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2024.1381228/full?utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field&journalName=Frontiers_in_Marine_Science&id=1381228) of results. This repository hosts Jupyter notebooks to help users access, analyze, and visualize CORA datasets hosted via [Amazon Web Services](https://noaa-nos-cora-pds.s3.amazonaws.com/index.html) on [NOAA’s Open Data Dissemination](https://www.noaa.gov/information-technology/open-data-dissemination) (NODD) Platform. All previous versions (Eg. Version 0.9 used for validation, and version 1.0 used for prototyping) are considered preliminary versions and should be superseded with version 1.1 for operational use. All code is dependent on Python libraries outlined in each notebook. Please ensure you are able to access and install each for optimal performance. Please see the [NOAA Technical Report](https://tidesandcurrents.noaa.gov/cora.html#publications) for additional information. 
+NOAA’s Coastal Ocean Reanalysis (CORA) provides modeled historical water levels and waves for the Atlantic, Gulf, and Caribbean from 1979-2022. The reanalysis was performed through the partnership of NOAA National Ocean Service (NOS) and University of North Carolina’s (UNC) Institute of Marine Sciences and Renaissance Computing Institute ([RENCI](https://renci.org/)). Modeling was performed by ’s  RENCI, and couples ADvanced CIRCulation Model ([ADCIRC](https://www.erdc.usace.army.mil/Media/Fact-Sheets/Fact-Sheet-Article-View/Article/476698/advanced-circulation-model/)) and Simulating WAves Nearshore ([SWAN](https://swanmodel.sourceforge.io/)) to produce data points every 300 to 500 meters. Hourly water level observations from NOAA’s Center for Operational Oceanographic Products and Services (CO-OPS) [National Water Level Observation Network](https://tidesandcurrents.noaa.gov/) (NWLON) were both assimilated into modeling, and used for [validation](https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2024.1381228/full?utm_source=Email_to_authors_&utm_medium=Email&utm_content=T1_11.5e1_author&utm_campaign=Email_publication&field&journalName=Frontiers_in_Marine_Science&id=1381228) of results. This repository hosts Jupyter notebooks to help users access, analyze, and visualize CORA datasets hosted via [Amazon Web Services](https://noaa-nos-cora-pds.s3.amazonaws.com/index.html) on [NOAA’s Open Data Dissemination](https://www.noaa.gov/information-technology/open-data-dissemination) (NODD) Platform. All previous versions (Eg. Version 0.9 used for validation, and version 1.0 used for prototyping) are considered preliminary versions and should be superseded with version 1.1 for operational use. All code is dependent on Python libraries outlined in each notebook. Please ensure you are able to access and install each for optimal performance. Please see the [NOAA Technical Report](https://tidesandcurrents.noaa.gov/cora.html#publications) for additional information.
 
 
 # Usage
@@ -16,20 +16,23 @@ jupyter notebook
 
 
 # Notebooks:
-## 1.  CORA_Accessing_Data.ipynb
-This notebook demonstrates how users can access CORA datasets on NOAA's Open Data Dissemination (NODD) Platform through Amazon Web Services. Model data is extracted  from the nearest model node to a user-specified geographic coordinates and displayed in a timeseries plot. 
+## 1.  CORA_compare_time_series_v2.ipynb
+This notebook is derived from `CORA_compare_time_series.ipynb` and is the primary version used for CBI analysis. It retrieves observed hourly water levels from NWLON stations using CO-OPS [Data API](https://tidesandcurrents.noaa.gov/api-helper/url-generator.html) to compare with CORA data corresponding to the same location. This version includes enhanced data handling, improved error management, and additional visualization features.
 
-## 2.  CORA_Visualize_Water_Levels.ipynb
+## 2.  CORA_Accessing_Data.ipynb
+This notebook demonstrates how users can access CORA datasets on NOAA's Open Data Dissemination (NODD) Platform through Amazon Web Services. Model data is extracted  from the nearest model node to a user-specified geographic coordinates and displayed in a timeseries plot.
+
+## 3.  CORA_Visualize_Water_Levels.ipynb
 This notebook demonstrates how users can access CORA datasets on NOAA's Open Data Dissemination (NODD) Platform through Amazon Web Services and create a 2-dimensional water level surface plot.
 
-## 3.  CORA_Plot_Mesh.ipynb
+## 4.  CORA_Plot_Mesh.ipynb
 Interested in viewing the bathymetry or mesh that was used in the model to create the CORA data? This notebook allows users to create a rasterized plot of the topobathy at the CORA model nodes and overlay the model mesh.
 
-## 4.  CORA_Convert_Datums.ipynb
+## 5.  CORA_Convert_Datums.ipynb
 This notebook allows users to upload a .csv file of extracted CORA time series and run it through [NOAA’s Tidal Analysis Datum Calculator](https://access.co-ops.nos.noaa.gov/datumcalc/) ([TADC](https://github.com/NOAA-CO-OPS/CO-OPS-Tidal-Analysis-Datum-Calculator)) to convert data from Mean Sea Level (MSL) to other Datums. To run this notebook it will be necessary to also have the Python script and config file for the calculator, which are available on the GitHub repository.
 
-## 5.  CORA_Compare_Time-Series.ipynb
-This notebook retrieves observed hourly water levels from NWLON stations using CO-OPS [Data API](https://tidesandcurrents.noaa.gov/api-helper/url-generator.html) to compare with CORA data corresponding to the same location. 
+## 6.  CORA_Compare_Time-Series.ipynb
+This notebook retrieves observed hourly water levels from NWLON stations using CO-OPS [Data API](https://tidesandcurrents.noaa.gov/api-helper/url-generator.html) to compare with CORA data corresponding to the same location.
 
 
 # Additional Contact Information:
@@ -41,11 +44,11 @@ This notebook retrieves observed hourly water levels from NWLON stations using C
 #  Partners
   - NOAA’s [Office for Coast Management](https://coast.noaa.gov/) - Website: [Contact Form](https://coast.noaa.gov/contactform/)
   - NOAA’s [Integrated Ocean Observing System](https://ioos.noaa.gov/) - Email: noaa.ioos.webmaster@noaa.gov
-  - [Tetratech’s RPS](https://www.rpsgroup.com/) 
+  - [Tetratech’s RPS](https://www.rpsgroup.com/)
   - University of North Carolina’s [Renaissance Computing Institute](https://renci.org/)
   - [University of Hawaii Sea Level Center](https://uhslc.soest.hawaii.edu/)
 
-#  Additional Reference codes: 
+#  Additional Reference codes:
    - [Dasher Triangular Meshes](https://github.com/holoviz/datashader/blob/f23de596f9adcb8188d48e6b163c36c913cd9912/examples/user_guide/6_Trimesh.ipynb#L11)
    - [Reproducable Notebooks for Maximum Water Levels](https://github.com/reproducible-notebooks/hurricane-ike-water-levels/tree/master)
 
