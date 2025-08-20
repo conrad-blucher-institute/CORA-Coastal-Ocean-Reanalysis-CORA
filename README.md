@@ -16,7 +16,7 @@ jupyter notebook
 
 
 # Notebooks:
-## 1.  CORA_compare_time_series_v2.ipynb
+## 1.  CBI_compare_time_series.ipynb
 This notebook is derived from `CORA_compare_time_series.ipynb` and is the primary version used for CBI analysis. It retrieves observed hourly water levels from NWLON stations using CO-OPS [Data API](https://tidesandcurrents.noaa.gov/api-helper/url-generator.html) to compare with CORA data corresponding to the same location. This version includes enhanced data handling, improved error management, and additional visualization features.
 
 ## 2.  CORA_Accessing_Data.ipynb
