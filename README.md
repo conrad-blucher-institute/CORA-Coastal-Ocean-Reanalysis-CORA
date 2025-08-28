@@ -7,7 +7,7 @@ NOAA’s Coastal Ocean Reanalysis (CORA) provides modeled historical water level
 # Usage
 An environment.yml file is included to create an Anaconda environment in which to run the notebooks. To run the notebooks, you can use the following steps:
 ```bash
-git clone https://github.com/NOAA-CO-OPS/CORA-Coastal-Ocean-ReAnalysis-CORA.git
+git clone https://github.com/conrad-blucher-institute/CORA-Coastal-Ocean-Reanalysis-CORA.git
 cd CORA-Coastal-Ocean-ReAnalysis-CORA
 conda env create -f environment.yml
 conda activate cora
